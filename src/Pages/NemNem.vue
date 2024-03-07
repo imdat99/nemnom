@@ -2,7 +2,7 @@
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { onMounted, ref, watch } from 'vue'
-import type { Menu } from './Types'
+import type { Menu } from '../Types'
 const menus = ref<Menu[]>([])
 const activeTab = ref(0)
 const swiperRef = ref<typeof Swiper>()

@@ -2,11 +2,17 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import liveReload from 'vite-plugin-live-reload'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   // eslint-disable-next-line no-useless-escape
-  plugins: [vue(), liveReload(`${__dirname}/../**/*\.php`)],
+  plugins: [vue(), vueJsx(), liveReload(`${__dirname}/../**/*\.php`)],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  },
   build: {
     rollupOptions: {
       output: {
